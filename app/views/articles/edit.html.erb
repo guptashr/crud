@@ -1,22 +1,5 @@
 <h2>Edit Article</h2>
 
-<% if @article.errors.any? %>
-    <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-    </ul>
-<% end %>
-
-<%= form_with(model: @article, local: true) do |f| %>
-    <p>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-    </p>
-
-    <p>
-        <%= f.submit %>
-    </p>
-<% end %>
+    <%= render 'articles/form' %>
 
 <%= link_to 'Return to Home', articles_path %>
