@@ -1,0 +1,39 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+.navbar {
+    background-color: #080501 !important;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+#logo {
+    float: left;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+#home-container {
+    margin-top: 25px;
+}
+
+.jumbotron {
+    background-image: asset-url('photo-1659257663461-4d5b6f90085e.avif');
+    background-size: cover;
+}
+
+/* Sticky Footer Classes */
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: #d3d3d3;
+}
