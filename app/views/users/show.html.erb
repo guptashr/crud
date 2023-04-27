@@ -1,0 +1,26 @@
+<h2 class="text-center mt-4"><%= @user.username.titleize %> Profile</h2>
+
+<div class="text-center mt-4">
+<% if logged_in? %>
+    <% if @user == current_user %>
+        <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-outline-info" %>
+    <% end %>
+    <% if @user == current_user || current_user.admin? %>
+        <%= link_to "Delete Profile", user_path(@user), method: "delete", class: "btn btn-outline-danger", data: {confirm: "Are you sure you want to delete?"} %>
+    <% end %>
+<% end %>
+</div>
+
+<% if @articles.present? %>
+    <h3 class="text-center mt-4">Articles</h3>
+<% end %>
+
+<div class="flickr_pagination">
+    <%= will_paginate @articles, :container => false %>
+</div>
+
+<%= render 'articles/article' %>
+
+<div class="flickr_pagination">
+    <%= will_paginate @articles, :container => false %>
+</div>
